@@ -27,7 +27,7 @@ Etapes :
 5. Choisir le package `ZFLIGHT_BTP_RAP2`.
 6. Importer les objets.
 7. Activer en deux passes si necessaire :
-   - tables/source definitions et CDS interface;
+   - Dictionary tables et CDS interface;
    - behavior definitions et classes.
 
 ## Structure
@@ -57,7 +57,7 @@ generated-source/
 
 Ce repository est une base de migration/import. Selon la release ABAP Environment, ADT peut demander de petits ajustements syntaxiques :
 
-- DDL table definitions source-based selon support abapGit/systeme.
+- Dictionary table objects selon support abapGit/systeme.
 - `TABLE FOR UPDATE zi_travel\\booking` et `zi_travel\\bookingsupplement`.
 - Appel de l'action interne `ReCalcTotalPrice` depuis les handlers children.
 - `new_message_with_text`, remplacable par une message class `ZFLIGHT_MSG`.
