@@ -44,6 +44,7 @@ define view entity ZI_Customer
       @Semantics.amount.currencyCode: 'CreditLimitCurrency'
       cast( 0 as abap.curr( 15, 2 ) ) as CreditLimit,
       cast( 'EUR' as abap.cuky )       as CreditLimitCurrency,
+      cast( 'EUR' as abap.cuky )       as CurrencyCode,
 
       created_by      as CreatedBy,
       created_at      as CreatedAt,
