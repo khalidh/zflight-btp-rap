@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking Supplement Interface View'
 define view entity ZI_BookingSupplement
-  as select from zflight_booksuppl as BookingSupplement
+  as select from zflight_bksuppl as BookingSupplement
   association to parent ZI_Booking as _Booking
     on  $projection.TravelID  = _Booking.TravelID
     and $projection.BookingID = _Booking.BookingID

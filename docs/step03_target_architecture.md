@@ -58,7 +58,7 @@ Behavior Implementations / Helpers
 Persistence Layer
   ZFLIGHT_TRAVEL
   ZFLIGHT_BOOKING
-  ZFLIGHT_BOOKSUPPL
+  ZFLIGHT_BKSUPPL
   ZFLIGHT_FLIGHT
   ZFLIGHT_CARRIER
   ZFLIGHT_CONN
@@ -109,7 +109,7 @@ Raisons :
 |---|---|---|---|
 | `ZFLIGHT_TRAVEL` | `client`, `travel_id` | `agency_id`, `customer_id`, `begin_date`, `end_date`, `booking_fee`, `total_price`, `currency_code`, `description`, `overall_status`, audit fields | Reprend l'esprit `/DMO/TRAVEL_M` |
 | `ZFLIGHT_BOOKING` | `client`, `travel_id`, `booking_id` | `booking_date`, `customer_id`, `carrier_id`, `connection_id`, `flight_date`, `flight_price`, `currency_code`, `booking_status`, `last_changed_at` | Child de Travel |
-| `ZFLIGHT_BOOKSUPPL` | `client`, `travel_id`, `booking_id`, `booking_supplement_id` | `supplement_id`, `price`, `currency_code`, `last_changed_at` | Option recommande pour fidelite metier |
+| `ZFLIGHT_BKSUPPL` | `client`, `travel_id`, `booking_id`, `booking_supplement_id` | `supplement_id`, `price`, `currency_code`, `last_changed_at` | Option recommande pour fidelite metier |
 
 ### Tables reference/master data
 
@@ -120,9 +120,9 @@ Raisons :
 | `ZFLIGHT_CONN` | Connexions aeriennes |
 | `ZFLIGHT_CUSTOMER` | Clients/passagers |
 | `ZFLIGHT_AIRPORT` | Aeroports |
-| `ZFLIGHT_SUPPLEMENT`, `ZFLIGHT_SUPPL_TEXT` | Supplements de reservation |
-| `ZFLIGHT_TRVL_STAT`, `ZFLIGHT_TRVL_STATT` | Statuts Travel et textes |
-| `ZFLIGHT_BOOK_STAT`, `ZFLIGHT_BOOK_STATT` | Statuts Booking et textes |
+| `ZFLIGHT_SUPPL`, `ZFLIGHT_SUPPL_TEXT` | Supplements de reservation |
+| `ZFLIGHT_TSTAT`, `ZFLIGHT_TSTATT` | Statuts Travel et textes |
+| `ZFLIGHT_BSTAT`, `ZFLIGHT_BSTATT` | Statuts Booking et textes |
 
 ### Pourquoi ne pas pointer directement sur `/DMO/*`
 
@@ -140,7 +140,7 @@ Le code genere pourra toutefois signaler une variante "reuse `/DMO/*`" si l'util
 |---|---|---|---|
 | `ZI_Travel` | `ZFLIGHT_TRAVEL` | root view entity | `_Booking`, `_Customer`, `_Currency`, `_TravelStatus` |
 | `ZI_Booking` | `ZFLIGHT_BOOKING` | child view entity | parent `_Travel`, `_BookSupplement`, `_Customer`, `_Carrier`, `_Connection`, `_Flight`, `_BookingStatus` |
-| `ZI_BookingSupplement` | `ZFLIGHT_BOOKSUPPL` | child view entity | parent `_Booking`, `_Supplement`, `_SupplementText` |
+| `ZI_BookingSupplement` | `ZFLIGHT_BKSUPPL` | child view entity | parent `_Booking`, `_Supplement`, `_SupplementText` |
 | `ZI_Flight` | `ZFLIGHT_FLIGHT` | view entity read-only | `_Carrier`, `_Connection`, `_Currency` |
 | `ZI_Carrier` | `ZFLIGHT_CARRIER` | view entity read-only | `_Currency` |
 | `ZI_Connection` | `ZFLIGHT_CONN` | view entity read-only | `_Carrier`, `_DepartureAirport`, `_DestinationAirport` |

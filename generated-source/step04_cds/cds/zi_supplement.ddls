@@ -2,7 +2,7 @@
 @EndUserText.label: 'Supplement Interface View'
 @Search.searchable: true
 define view entity ZI_Supplement
-  as select from zflight_supplement as Supplement
+  as select from zflight_suppl as Supplement
 {
       @Search.defaultSearchElement: true
       @ObjectModel.text.element: ['Description']

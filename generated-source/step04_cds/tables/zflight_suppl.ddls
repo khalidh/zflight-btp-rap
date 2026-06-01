@@ -3,7 +3,7 @@
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zflight_supplement {
+define table zflight_suppl {
   key client     : abap.clnt not null;
   key supplement_id : abap.numc(4) not null;
   description    : abap.char(80);

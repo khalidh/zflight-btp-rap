@@ -48,15 +48,15 @@ Ce n'est pas une invention fonctionnelle : c'est la racine existante `/DMO/TRAVE
 |---|---|---|---|---|---|
 | `/DMO/TRAVEL` | Racine Travel legacy | `ZFLIGHT_TRAVEL` | `ZI_Travel` | `ZC_Travel` | Transactionnel managed |
 | `/DMO/BOOKING` | Reservation enfant | `ZFLIGHT_BOOKING` | `ZI_Booking` | `ZC_Booking` | Transactionnel managed, composition de Travel |
-| `/DMO/BOOK_SUPPL` | Supplement reservation | `ZFLIGHT_BOOKSUPPL` | `ZI_BookingSupplement` | `ZC_BookingSupplement` | Optionnel mais recommande pour fidelite metier |
+| `/DMO/BOOK_SUPPL` | Supplement reservation | `ZFLIGHT_BKSUPPL` | `ZI_BookingSupplement` | `ZC_BookingSupplement` | Optionnel mais recommande pour fidelite metier |
 | `/DMO/FLIGHT` | Vol disponible | `ZFLIGHT_FLIGHT` ou table `/DMO/FLIGHT` si sample installe | `ZI_Flight` | `ZC_Flight` | Read-only master/value help par defaut |
 | `/DMO/CONNECTION` | Connexion aerienne | `ZFLIGHT_CONNECTION` ou `/DMO/CONNECTION` | `ZI_Connection` | `ZC_Connection` | Read-only master/value help par defaut |
 | `/DMO/CARRIER` | Compagnie | `ZFLIGHT_CARRIER` ou `/DMO/CARRIER` | `ZI_Carrier` | `ZC_Carrier` | Read-only master/value help, CRUD possible plus tard |
 | `/DMO/CUSTOMER` | Client/passager | `ZFLIGHT_CUSTOMER` ou `/DMO/CUSTOMER` | `ZI_Customer` | `ZC_Customer` | Read-only master/value help, CRUD possible plus tard |
 | `/DMO/AIRPORT` | Aeroport | `ZFLIGHT_AIRPORT` | `ZI_Airport` | `ZC_Airport` | Value help/support |
-| `/DMO/TRVL_STAT`, `/DMO/TRVL_STAT_T` | Statuts Travel | `ZFLIGHT_TRVL_STAT*` ou enum/domain constants | `ZI_TravelStatusVH` | expose service only | Value help |
-| `/DMO/BOOK_STAT`, `/DMO/BOOK_STAT_T` | Statuts Booking | `ZFLIGHT_BOOK_STAT*` ou enum/domain constants | `ZI_BookingStatusVH` | expose service only | Value help |
-| `/DMO/SUPPLEMENT`, `/DMO/SUPPL_TEXT` | Supplements | `ZFLIGHT_SUPPLEMENT*` | `ZI_Supplement` | `ZC_Supplement` | Value help/support |
+| `/DMO/TRVL_STAT`, `/DMO/TRVL_STAT_T` | Statuts Travel | `ZFLIGHT_TSTAT*` ou enum/domain constants | `ZI_TravelStatusVH` | expose service only | Value help |
+| `/DMO/BOOK_STAT`, `/DMO/BOOK_STAT_T` | Statuts Booking | `ZFLIGHT_BSTAT*` ou enum/domain constants | `ZI_BookingStatusVH` | expose service only | Value help |
+| `/DMO/SUPPLEMENT`, `/DMO/SUPPL_TEXT` | Supplements | `ZFLIGHT_SUPPL*` | `ZI_Supplement` | `ZC_Supplement` | Value help/support |
 
 ### Variante Trial minimale
 
@@ -151,7 +151,7 @@ Le depot analyse ne montre pas de Dynpro, ALV classique ou SAP GUI UI active pou
 |---|---|
 | Table Travel | `ZFLIGHT_TRAVEL` |
 | Table Booking | `ZFLIGHT_BOOKING` |
-| Table Booking Supplement | `ZFLIGHT_BOOKSUPPL` |
+| Table Booking Supplement | `ZFLIGHT_BKSUPPL` |
 | Table Flight | `ZFLIGHT_FLIGHT` |
 | Table Carrier | `ZFLIGHT_CARRIER` |
 | Table Connection | `ZFLIGHT_CONN` |

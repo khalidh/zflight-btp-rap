@@ -109,7 +109,7 @@ authorization dependent by _Travel
 
 define behavior for ZI_BookingSupplement alias BookingSupplement
 implementation in class ZBP_I_BOOKSUPPL unique
-persistent table zflight_booksuppl
+persistent table zflight_bksuppl
 etag dependent by _Travel
 lock dependent by _Travel
 early numbering
@@ -121,7 +121,7 @@ authorization dependent by _Travel
                       Price,
                       CurrencyCode;
 
-  mapping for zflight_booksuppl
+  mapping for zflight_bksuppl
   {
     TravelID             = travel_id;
     BookingID            = booking_id;

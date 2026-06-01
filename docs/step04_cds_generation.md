@@ -20,15 +20,15 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 |---|---|---|
 | `/DMO/TRAVEL` | `zflight_travel`, `ZI_Travel` | Racine transactionnelle ajoutee explicitement |
 | `/DMO/BOOKING` | `zflight_booking`, `ZI_Booking` | Child de Travel |
-| `/DMO/BOOK_SUPPL` | `zflight_booksuppl`, `ZI_BookingSupplement` | Child de Booking |
+| `/DMO/BOOK_SUPPL` | `zflight_bksuppl`, `ZI_BookingSupplement` | Child de Booking |
 | `/DMO/FLIGHT` | `zflight_flight`, `ZI_Flight` | Master/read-only initialement |
 | `/DMO/CARRIER` | `zflight_carrier`, `ZI_Carrier` | Master/read-only initialement |
 | `/DMO/CONNECTION` | `zflight_conn`, `ZI_Connection` | Master/read-only initialement |
 | `/DMO/CUSTOMER` | `zflight_customer`, `ZI_Customer` | Master/read-only initialement |
 | `/DMO/AIRPORT` | `zflight_airport`, `ZI_Airport` | Support value help |
-| `/DMO/SUPPLEMENT` | `zflight_supplement`, `ZI_Supplement` | Support Booking Supplement |
-| `/DMO/TRVL_STAT*` | `zflight_trvl_stat`, `ZI_TravelStatusVH` | Value help simplifiee |
-| `/DMO/BOOK_STAT*` | `zflight_book_stat`, `ZI_BookingStatusVH` | Value help simplifiee |
+| `/DMO/SUPPLEMENT` | `zflight_suppl`, `ZI_Supplement` | Support Booking Supplement |
+| `/DMO/TRVL_STAT*` | `zflight_tstat`, `ZI_TravelStatusVH` | Value help simplifiee |
+| `/DMO/BOOK_STAT*` | `zflight_bstat`, `ZI_BookingStatusVH` | Value help simplifiee |
 
 ## Pourquoi ces choix
 
@@ -46,15 +46,15 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 |---|---|
 | `zflight_btp_rap/step04_cds/tables/zflight_travel.ddls` | `zflight_travel` |
 | `zflight_btp_rap/step04_cds/tables/zflight_booking.ddls` | `zflight_booking` |
-| `zflight_btp_rap/step04_cds/tables/zflight_booksuppl.ddls` | `zflight_booksuppl` |
+| `zflight_btp_rap/step04_cds/tables/zflight_bksuppl.ddls` | `zflight_bksuppl` |
 | `zflight_btp_rap/step04_cds/tables/zflight_carrier.ddls` | `zflight_carrier` |
 | `zflight_btp_rap/step04_cds/tables/zflight_conn.ddls` | `zflight_conn` |
 | `zflight_btp_rap/step04_cds/tables/zflight_flight.ddls` | `zflight_flight` |
 | `zflight_btp_rap/step04_cds/tables/zflight_customer.ddls` | `zflight_customer` |
 | `zflight_btp_rap/step04_cds/tables/zflight_airport.ddls` | `zflight_airport` |
-| `zflight_btp_rap/step04_cds/tables/zflight_supplement.ddls` | `zflight_supplement` |
-| `zflight_btp_rap/step04_cds/tables/zflight_trvl_stat.ddls` | `zflight_trvl_stat` |
-| `zflight_btp_rap/step04_cds/tables/zflight_book_stat.ddls` | `zflight_book_stat` |
+| `zflight_btp_rap/step04_cds/tables/zflight_suppl.ddls` | `zflight_suppl` |
+| `zflight_btp_rap/step04_cds/tables/zflight_tstat.ddls` | `zflight_tstat` |
+| `zflight_btp_rap/step04_cds/tables/zflight_bstat.ddls` | `zflight_bstat` |
 
 ### CDS interface
 
@@ -81,12 +81,12 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
    - `zflight_conn`
    - `zflight_flight`
    - `zflight_customer`
-   - `zflight_supplement`
-   - `zflight_trvl_stat`
-   - `zflight_book_stat`
+   - `zflight_suppl`
+   - `zflight_tstat`
+   - `zflight_bstat`
    - `zflight_travel`
    - `zflight_booking`
-   - `zflight_booksuppl`
+   - `zflight_bksuppl`
 3. Creer/activer les CDS master data :
    - `ZI_Carrier`
    - `ZI_Airport`

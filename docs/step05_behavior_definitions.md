@@ -112,7 +112,7 @@ Determinations :
 Mode :
 
 - managed implementation `ZBP_I_BOOKSUPPL`;
-- persistent table `zflight_booksuppl`;
+- persistent table `zflight_bksuppl`;
 - dependent lock/etag/authorization by `_Travel`;
 - early numbering.
 

@@ -55,10 +55,10 @@ Fichiers generes :
 
 | Behavior element | Implementation |
 |---|---|
-| `validateSupplement` | Controle existence dans `zflight_supplement` |
+| `validateSupplement` | Controle existence dans `zflight_suppl` |
 | `validatePrice` | Controle prix non negatif |
 | `validateCurrencyCode` | Controle devise obligatoire |
-| `determineSupplementPrice` | Lit prix/devise depuis `zflight_supplement` |
+| `determineSupplementPrice` | Lit prix/devise depuis `zflight_suppl` |
 | `requestTravelTotalRecalc` | Execute l'action interne root `ReCalcTotalPrice` |
 
 ## Choix techniques

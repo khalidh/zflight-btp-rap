@@ -23,7 +23,7 @@ CLASS lhc_bookingsupplement IMPLEMENTATION.
 
     LOOP AT supplements INTO DATA(supplement).
       SELECT SINGLE supplement_id
-        FROM zflight_supplement
+        FROM zflight_suppl
         WHERE supplement_id = @supplement-SupplementID
         INTO @DATA(supplement_id).
 
@@ -91,7 +91,7 @@ CLASS lhc_bookingsupplement IMPLEMENTATION.
 
     LOOP AT supplements INTO DATA(supplement).
       SELECT SINGLE price, currency_code
-        FROM zflight_supplement
+        FROM zflight_suppl
         WHERE supplement_id = @supplement-SupplementID
         INTO @DATA(master_supplement).
 

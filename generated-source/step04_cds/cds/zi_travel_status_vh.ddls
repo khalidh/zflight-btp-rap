@@ -2,7 +2,7 @@
 @EndUserText.label: 'Travel Status Value Help'
 @ObjectModel.resultSet.sizeCategory: #XS
 define view entity ZI_TravelStatusVH
-  as select from zflight_trvl_stat as TravelStatus
+  as select from zflight_tstat as TravelStatus
 {
       @ObjectModel.text.element: ['StatusText']
   key travel_status as TravelStatus,
