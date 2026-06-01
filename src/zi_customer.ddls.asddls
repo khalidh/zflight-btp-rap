@@ -8,6 +8,8 @@ define view entity ZI_Customer
       @ObjectModel.text.element: ['LastName']
   key customer_id     as CustomerID,
 
+      customer_id     as CustomerUUID,
+
       @Search.defaultSearchElement: true
       @Semantics.name.givenName: true
       first_name      as FirstName,
