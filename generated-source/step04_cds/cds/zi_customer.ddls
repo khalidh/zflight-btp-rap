@@ -41,6 +41,8 @@ define view entity ZI_Customer
       @Semantics.eMail.address: true
       email_address   as EMailAddress,
 
+      cast( 0 as abap.curr( 15, 2 ) ) as CreditLimit,
+
       created_by      as CreatedBy,
       created_at      as CreatedAt,
       last_changed_by as LastChangedBy,
