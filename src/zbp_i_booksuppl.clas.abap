@@ -1,0 +1,9 @@
+CLASS zbp_i_booksuppl DEFINITION
+  PUBLIC
+  ABSTRACT
+  FINAL
+  FOR BEHAVIOR OF zi_travel.
+ENDCLASS.
+
+CLASS zbp_i_booksuppl IMPLEMENTATION.
+ENDCLASS.
