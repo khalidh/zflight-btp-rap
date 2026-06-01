@@ -74,7 +74,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 
 ## Ordre d'import ADT recommande
 
-1. Creer le package `ZFLIGHT_BTP_RAP`.
+1. Creer le package `ZFLIGHT_BTP_RAP2`.
 2. Creer/activer les tables :
    - `zflight_carrier`
    - `zflight_airport`

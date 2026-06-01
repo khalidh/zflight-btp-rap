@@ -2,7 +2,7 @@
 
 ## Positionnement
 
-Cette etape traduit les objets analyses dans `src/legacy`, `src/reuse`, `src/managed` et `src/unmanaged` vers une cible `ZFLIGHT_BTP_RAP`.
+Cette etape traduit les objets analyses dans `src/legacy`, `src/reuse`, `src/managed` et `src/unmanaged` vers une cible `ZFLIGHT_BTP_RAP2`.
 
 Decision structurante :
 
@@ -143,7 +143,7 @@ Le depot analyse ne montre pas de Dynpro, ALV classique ou SAP GUI UI active pou
 
 | Objet | Nom cible |
 |---|---|
-| Package | `ZFLIGHT_BTP_RAP` |
+| Package | `ZFLIGHT_BTP_RAP2` |
 
 ### Persistence layer
 

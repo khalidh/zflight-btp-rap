@@ -2,7 +2,7 @@
 
 ## Objectif de l'architecture
 
-La cible `ZFLIGHT_BTP_RAP` transforme le scenario Flight Reference Scenario en application cloud-ready :
+La cible `ZFLIGHT_BTP_RAP2` transforme le scenario Flight Reference Scenario en application cloud-ready :
 
 - persistence autonome en namespace `Z*`;
 - RAP managed pour le coeur transactionnel `Travel -> Booking -> BookingSupplement`;
@@ -71,7 +71,7 @@ Persistence Layer
 
 | Couche | Objets | Responsabilite |
 |---|---|---|
-| Package | `ZFLIGHT_BTP_RAP` | Conteneur logiciel pedagogique et transportable |
+| Package | `ZFLIGHT_BTP_RAP2` | Conteneur logiciel pedagogique et transportable |
 | Persistence | Tables `ZFLIGHT_*` | Stockage autonome, pas de dependance obligatoire `/DMO/*` |
 | Interface CDS | `ZI_*` | Modele canonique, associations, compositions, semantique metier |
 | Projection CDS | `ZC_*` | Contrat transactionnel UI, renommage propre, annotations de consommation |
@@ -489,7 +489,7 @@ Limite : plus complexe et moins recommande pour demarrer sur BTP Trial.
 
 ## Ordre de generation propose
 
-1. Package `ZFLIGHT_BTP_RAP`.
+1. Package `ZFLIGHT_BTP_RAP2`.
 2. Tables persistence Z et eventuelles value help tables.
 3. Interface CDS `ZI_Carrier`, `ZI_Connection`, `ZI_Flight`, `ZI_Customer`, puis `ZI_Travel`, `ZI_Booking`, `ZI_BookingSupplement`.
 4. Projection CDS `ZC_*`.

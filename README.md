@@ -1,4 +1,4 @@
-# ZFLIGHT_BTP_RAP
+# ZFLIGHT_BTP_RAP2
 
 Migration pedagogique du SAP Flight Reference Scenario vers une architecture SAP BTP moderne :
 
@@ -16,16 +16,17 @@ Prerequis :
 
 - SAP BTP ABAP Environment ou systeme ABAP Cloud compatible.
 - Plugin abapGit installe dans Eclipse ADT ou abapGit disponible cote systeme.
-- Package cible recommande : `ZFLIGHT_BTP_RAP`.
+- Package cible recommande : `ZFLIGHT_BTP_RAP2`.
 
 Etapes :
 
-1. Dans ADT, creer ou selectionner le package `ZFLIGHT_BTP_RAP`.
-2. Ouvrir abapGit.
-3. Ajouter ce repository GitHub.
-4. Choisir le package `ZFLIGHT_BTP_RAP`.
-5. Importer les objets.
-6. Activer en deux passes si necessaire :
+1. Si ce repository est deja lie localement a `ZFLIGHT_BTP_RAP`, supprimer cette entree dans la vue abapGit repositories.
+2. Dans ADT, creer ou selectionner le package `ZFLIGHT_BTP_RAP2`.
+3. Ouvrir abapGit.
+4. Ajouter ce repository GitHub.
+5. Choisir le package `ZFLIGHT_BTP_RAP2`.
+6. Importer les objets.
+7. Activer en deux passes si necessaire :
    - tables/source definitions et CDS interface;
    - behavior definitions et classes.
 
@@ -82,4 +83,3 @@ A venir :
 - service binding OData V4 UI dans ADT
 - annotations Fiori Elements
 - ABAP Unit
-

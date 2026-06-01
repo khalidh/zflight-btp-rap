@@ -172,7 +172,7 @@ Services existants pertinents :
 
 ## Evaluation ABAP Cloud / BTP Trial
 
-Pour une cible `ZFLIGHT_BTP_RAP`, deux options realistes apparaissent :
+Pour une cible `ZFLIGHT_BTP_RAP2`, deux options realistes apparaissent :
 
 1. **Managed RAP recommande pour BTP Trial** : creer des tables Z persistantes ou s'appuyer sur des tables custom Z generees depuis les structures `/DMO/*`, puis exposer `ZI_*` et `ZC_*`. C'est l'option la plus Clean Core et la plus compatible ABAP Cloud.
 2. **Unmanaged RAP pedagogique** : reproduire l'adaptateur `src/unmanaged`, mais remplacer les function modules par une classe ABAP Cloud compatible. A reserver si l'objectif est de montrer la migration d'une API legacy procedurale vers une facade objet.
