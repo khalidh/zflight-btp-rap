@@ -19,6 +19,7 @@ define view entity ZI_Customer
       @Semantics.text: true
       last_name       as LastName,
       last_name       as CustomerName,
+      cast( 'P' as abap.char( 1 ) )    as CustomerType,
 
       @Semantics.name.prefix: true
       title           as Title,
