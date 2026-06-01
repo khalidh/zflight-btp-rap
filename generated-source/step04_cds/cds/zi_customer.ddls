@@ -18,6 +18,7 @@ define view entity ZI_Customer
       @Semantics.name.familyName: true
       @Semantics.text: true
       last_name       as LastName,
+      last_name       as CustomerName,
 
       @Semantics.name.prefix: true
       title           as Title,
