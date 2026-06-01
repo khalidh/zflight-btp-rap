@@ -42,6 +42,7 @@ define view entity ZI_Customer
 
       @Semantics.eMail.address: true
       email_address   as EMailAddress,
+      email_address   as EMail,
 
       @Semantics.amount.currencyCode: 'CreditLimitCurrency'
       cast( 0 as abap.curr( 15, 2 ) ) as CreditLimit,
