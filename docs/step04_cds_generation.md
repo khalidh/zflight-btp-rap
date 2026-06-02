@@ -12,7 +12,7 @@ zflight_btp_rap/step04_cds/
   cds/
 ```
 
-Les projections `ZC_*`, behaviors, service definition, service binding et annotations UI detaillees seront generes dans les etapes suivantes. Ici, l'objectif est d'obtenir une base de modele de donnees stable.
+Les projections `ZC_*`, behaviors, service definition, service binding et annotations UI detaillees seront generes dans les etapes suivantes. `ZC_Customer` est fourni ici comme correction minimale pour eviter la reference obsolete a `GSTNO`. Ici, l'objectif est d'obtenir une base de modele de donnees stable.
 
 ## Ce qui est migre
 
@@ -22,9 +22,9 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 | `/DMO/BOOKING` | `zflight_booking`, `ZI_Booking` | Child de Travel |
 | `/DMO/BOOK_SUPPL` | `zflight_bksuppl`, `ZI_BookingSupplement` | Child de Booking |
 | `/DMO/FLIGHT` | `zflight_flight`, `ZI_Flight` | Master/read-only initialement |
-| `/DMO/CARRIER` | `zflight_carrier`, `ZI_Carrier` | Master/read-only initialement |
+| `/DMO/CARRIER` | `zflight_carrier`, `ZI_Carrier`, `ZI_Airline` | Master/read-only initialement |
 | `/DMO/CONNECTION` | `zflight_conn`, `ZI_Connection` | Master/read-only initialement |
-| `/DMO/CUSTOMER` | `zflight_customer`, `ZI_Customer` | Master/read-only initialement |
+| `/DMO/CUSTOMER` | `zflight_customer`, `ZI_Customer`, `ZC_Customer` | Master/read-only initialement |
 | `/DMO/AIRPORT` | `zflight_airport`, `ZI_Airport` | Support value help |
 | `/DMO/SUPPLEMENT` | `zflight_suppl`, `ZI_Supplement` | Support Booking Supplement |
 | `/DMO/TRVL_STAT*` | `zflight_tstat`, `ZI_TravelStatusVH` | Value help simplifiee |
@@ -37,6 +37,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 - `Travel` est ajoute car `Booking` est un enfant du scenario source, pas une racine autonome.
 - Les statuts sont modelises en petites tables simples avec texte embarque pour demarrer vite. Des tables texte separees pourront etre ajoutees si la localisation devient prioritaire.
 - `Flight`, `Carrier`, `Connection`, `Customer`, `Airport`, `Supplement` sont modelises comme master data read-only au depart. Le CRUD master data pourra etre ajoute plus tard avec behaviors separes.
+- `ZI_Airline` garde une association simple vers `ZI_Flight` afin d'eviter une composition master data qui exigerait une association to-parent dans `ZI_Flight`.
 
 ## Fichiers generes
 
@@ -65,8 +66,10 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 | `zflight_btp_rap/step04_cds/cds/zi_booking_supplement.ddls` | `ZI_BookingSupplement` |
 | `zflight_btp_rap/step04_cds/cds/zi_flight.ddls` | `ZI_Flight` |
 | `zflight_btp_rap/step04_cds/cds/zi_carrier.ddls` | `ZI_Carrier` |
+| `zflight_btp_rap/step04_cds/cds/zi_airline.ddls` | `ZI_Airline` |
 | `zflight_btp_rap/step04_cds/cds/zi_connection.ddls` | `ZI_Connection` |
 | `zflight_btp_rap/step04_cds/cds/zi_customer.ddls` | `ZI_Customer` |
+| `zflight_btp_rap/step04_cds/cds/zc_customer.ddls` | `ZC_Customer` |
 | `zflight_btp_rap/step04_cds/cds/zi_airport.ddls` | `ZI_Airport` |
 | `zflight_btp_rap/step04_cds/cds/zi_supplement.ddls` | `ZI_Supplement` |
 | `zflight_btp_rap/step04_cds/cds/zi_travel_status_vh.ddls` | `ZI_TravelStatusVH` |
@@ -92,10 +95,12 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
    - `ZI_Airport`
    - `ZI_Connection`
    - `ZI_Flight`
+   - `ZI_Airline`
    - `ZI_Customer`
    - `ZI_Supplement`
    - `ZI_TravelStatusVH`
    - `ZI_BookingStatusVH`
+   - `ZC_Customer`
 4. Creer/activer les CDS transactionnels :
    - `ZI_Travel`
    - `ZI_Booking`
@@ -109,7 +114,7 @@ Note : si ADT exige les children avant le root a cause des compositions, activer
 - Les champs audit sont prepares pour RAP managed, mais les annotations/champs definitifs pourront etre ajustes au moment des behavior definitions.
 - Les value helps devise/pays standard (`I_CurrencyStdVH`, `I_CountryVH`) ne sont pas references dans cette etape pour garder les CDS autonomes. Elles seront ajoutees dans les projections si disponibles.
 - Les donnees demo ne sont pas encore chargees. Une classe `ZCL_FLIGHT_DEMO_DATA_GEN` sera prevue plus tard.
-- Les projections `ZC_*` ne sont pas encore generees. Elles viendront avant le service OData V4 et porteront l'essentiel des annotations Fiori Elements.
+- Les projections `ZC_*` completes ne sont pas encore generees. `ZC_Customer` est seulement la projection read-only minimale, sans champ `GSTNO`.
 
 ## Prochaine etape
 
@@ -120,4 +125,3 @@ Etape 5 : generation des behavior definitions managed pour :
 - `ZI_BookingSupplement`
 
 Il faudra declarer les operations, validations, determinations, actions, compositions, numbering, lock et etag.
-
