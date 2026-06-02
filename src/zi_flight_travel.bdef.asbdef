@@ -2,7 +2,6 @@ managed implementation in class ZBP_I_FLIGHT_TRAVEL unique;
 strict ( 2 );
 
 define behavior for ZI_Flight_Travel alias Travel
-implementation in class ZBP_I_FLIGHT_TRAVEL unique
 persistent table zflight_travel
 lock master
 authorization master ( none )
@@ -35,7 +34,6 @@ authorization master ( none )
 }
 
 define behavior for ZI_Flight_Booking alias Booking
-implementation in class ZBP_I_FLIGHT_BOOKING unique
 persistent table zflight_booking
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -65,7 +63,6 @@ authorization dependent by _Travel
 }
 
 define behavior for ZI_Flight_Book_Suppl alias BookingSupplement
-implementation in class ZBP_I_FLIGHT_BOOKSUPPL unique
 persistent table zflight_bksuppl
 lock dependent by _Travel
 authorization dependent by _Travel
