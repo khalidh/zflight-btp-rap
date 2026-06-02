@@ -1,0 +1,15 @@
+@EndUserText.label: 'Flight Travel Service'
+define service ZUI_FLIGHT_TRAVEL {
+  expose ZI_Flight_Travel as Travel;
+  expose ZI_Flight_Booking as Booking;
+  expose ZI_Flight_Book_Suppl as BookingSupplement;
+  expose ZI_Flight_Customer as Customer;
+
+  expose ZI_Flight as Flight;
+  expose ZI_Carrier as Carrier;
+  expose ZI_Connection as Connection;
+  expose ZI_Airport as Airport;
+  expose ZI_Supplement as Supplement;
+  expose ZI_Travel_Status_VH as TravelStatus;
+  expose ZI_Booking_Status_VH as BookingStatus;
+}
