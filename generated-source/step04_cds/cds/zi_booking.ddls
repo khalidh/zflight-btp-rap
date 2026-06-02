@@ -4,7 +4,7 @@ define view entity ZI_Booking
   as select from zflight_booking as Booking
   association to parent ZI_Travel as _Travel
     on $projection.TravelID = _Travel.TravelID
-  composition [0..*] of ZI_BookingSupplement as _BookingSupplement
+  composition [0..*] of ZI_Booking_Supplement as _BookingSupplement
   association [1..1] to ZI_Flight_Customer as _Customer
     on $projection.CustomerID = _Customer.CustomerID
   association [1..1] to ZI_Carrier as _Carrier
@@ -16,7 +16,7 @@ define view entity ZI_Booking
     on  $projection.CarrierID    = _Flight.CarrierID
     and $projection.ConnectionID = _Flight.ConnectionID
     and $projection.FlightDate   = _Flight.FlightDate
-  association [0..1] to ZI_BookingStatusVH as _BookingStatus
+  association [0..1] to ZI_Booking_Status_VH as _BookingStatus
     on $projection.BookingStatus = _BookingStatus.BookingStatus
 {
   key travel_id      as TravelID,
