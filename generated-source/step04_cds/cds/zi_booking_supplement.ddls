@@ -4,7 +4,7 @@ define view entity ZI_Booking_Supplement
   as select from zflight_bksuppl as BookingSupplement
   association to parent ZI_Booking as _Booking
     on  $projection.TravelID  = _Booking.TravelID
-    and $projection.BookingID = _Booking.BookID
+    and $projection.BookingID = _Booking.BookingID
   association [1..1] to ZI_Travel as _Travel
     on $projection.TravelID = _Travel.TravelID
   association [0..1] to ZI_Supplement as _Supplement
