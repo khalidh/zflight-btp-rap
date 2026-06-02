@@ -3,7 +3,7 @@
 define root view entity ZI_Travel
   as select from zflight_travel as Travel
   composition [0..*] of ZI_Booking as _Booking
-  association [0..1] to ZI_FlightCustomer as _Customer
+  association [0..1] to ZI_Flight_Customer as _Customer
     on $projection.CustomerID = _Customer.CustomerID
   association [0..1] to ZI_TravelStatusVH as _TravelStatus
     on $projection.OverallStatus = _TravelStatus.TravelStatus
