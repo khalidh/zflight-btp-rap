@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking Status Value Help'
 @ObjectModel.resultSet.sizeCategory: #XS
-define view entity ZI_BookingStatusVH
+define view entity ZI_Booking_Status_VH
   as select from zflight_bstat as BookingStatus
 {
       @ObjectModel.text.element: ['StatusText']
