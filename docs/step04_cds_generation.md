@@ -24,7 +24,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 | `/DMO/FLIGHT` | `zflight_flight`, `ZI_Flight` | Master/read-only initialement |
 | `/DMO/CARRIER` | `zflight_carrier`, `ZI_Carrier`, `ZI_Airline` | Master/read-only initialement |
 | `/DMO/CONNECTION` | `zflight_conn`, `ZI_Connection` | Master/read-only initialement |
-| `/DMO/CUSTOMER` | `zflight_customer`, `ZI_Customer` | Master/read-only initialement |
+| `/DMO/CUSTOMER` | `zflight_customer`, `ZI_FlightCustomer` | Master/read-only initialement |
 | `/DMO/AIRPORT` | `zflight_airport`, `ZI_Airport` | Support value help |
 | `/DMO/SUPPLEMENT` | `zflight_suppl`, `ZI_Supplement` | Support Booking Supplement |
 | `/DMO/TRVL_STAT*` | `zflight_tstat`, `ZI_TravelStatusVH` | Value help simplifiee |
@@ -38,6 +38,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 - Les statuts sont modelises en petites tables simples avec texte embarque pour demarrer vite. Des tables texte separees pourront etre ajoutees si la localisation devient prioritaire.
 - `Flight`, `Carrier`, `Connection`, `Customer`, `Airport`, `Supplement` sont modelises comme master data read-only au depart. Le CRUD master data pourra etre ajoute plus tard avec behaviors separes.
 - `ZI_Airline` garde une association simple vers `ZI_Flight` afin d'eviter une composition master data qui exigerait une association to-parent dans `ZI_Flight`.
+- `ZI_FlightCustomer` evite le nom global `ZI_Customer`, deja utilise dans certains scenarios O2C avec `ZC_Customer`, `ZI_Invoice` et `ZI_Payment`.
 - Aucune projection `ZC_Customer` n'est livree ici, car ce nom existe deja dans certains scenarios O2C et peut casser leurs objets dependants.
 
 ## Fichiers generes
@@ -69,7 +70,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
 | `zflight_btp_rap/step04_cds/cds/zi_carrier.ddls` | `ZI_Carrier` |
 | `zflight_btp_rap/step04_cds/cds/zi_airline.ddls` | `ZI_Airline` |
 | `zflight_btp_rap/step04_cds/cds/zi_connection.ddls` | `ZI_Connection` |
-| `zflight_btp_rap/step04_cds/cds/zi_customer.ddls` | `ZI_Customer` |
+| `zflight_btp_rap/step04_cds/cds/zi_flight_customer.ddls` | `ZI_FlightCustomer` |
 | `zflight_btp_rap/step04_cds/cds/zi_airport.ddls` | `ZI_Airport` |
 | `zflight_btp_rap/step04_cds/cds/zi_supplement.ddls` | `ZI_Supplement` |
 | `zflight_btp_rap/step04_cds/cds/zi_travel_status_vh.ddls` | `ZI_TravelStatusVH` |
@@ -96,7 +97,7 @@ Les projections `ZC_*`, behaviors, service definition, service binding et annota
    - `ZI_Connection`
    - `ZI_Flight`
    - `ZI_Airline`
-   - `ZI_Customer`
+   - `ZI_FlightCustomer`
    - `ZI_Supplement`
    - `ZI_TravelStatusVH`
    - `ZI_BookingStatusVH`
