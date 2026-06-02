@@ -5,7 +5,7 @@ define view entity ZI_Booking
   association to parent ZI_Travel as _Travel
     on $projection.TravelID = _Travel.TravelID
   composition [0..*] of ZI_BookingSupplement as _BookingSupplement
-  association [1..1] to ZI_Customer as _Customer
+  association [1..1] to ZI_FlightCustomer as _Customer
     on $projection.CustomerID = _Customer.CustomerID
   association [1..1] to ZI_Carrier as _Carrier
     on $projection.CarrierID = _Carrier.CarrierID
