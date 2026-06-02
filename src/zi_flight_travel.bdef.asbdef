@@ -7,7 +7,7 @@ persistent table zflight_travel
 lock master
 authorization master ( none )
 {
-  field ( readonly ) TotalPrice, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+  field ( readonly ) TravelID, TotalPrice, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
   mapping for zflight_travel
   {
@@ -40,7 +40,7 @@ persistent table zflight_booking
 lock dependent by _Travel
 authorization dependent by _Travel
 {
-  field ( readonly ) TravelID, FlightPrice, LastChangedAt;
+  field ( readonly ) TravelID, BookingID, FlightPrice, LastChangedAt;
 
   mapping for zflight_booking
   {
@@ -70,7 +70,7 @@ persistent table zflight_bksuppl
 lock dependent by _Travel
 authorization dependent by _Travel
 {
-  field ( readonly ) TravelID, BookingID, LastChangedAt;
+  field ( readonly ) TravelID, BookingID, BookingSupplementID, LastChangedAt;
 
   mapping for zflight_bksuppl
   {
