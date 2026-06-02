@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Flight Customer Interface View'
 @Search.searchable: true
-define view entity ZI_FlightCustomer
+define view entity ZI_Flight_Customer
   as select from zflight_customer as Customer
 {
       @Search.defaultSearchElement: true
