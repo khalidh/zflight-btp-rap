@@ -1,9 +1,13 @@
-CLASS zbp_i_booking DEFINITION
-  PUBLIC
-  ABSTRACT
-  FINAL
-  FOR BEHAVIOR OF zi_travel.
+class ZBP_I_BOOKING definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zbp_i_booking IMPLEMENTATION.
+
+
+CLASS ZBP_I_BOOKING IMPLEMENTATION.
 ENDCLASS.
