@@ -1,0 +1,15 @@
+@EndUserText.label: 'Flight RAP travel service'
+@ObjectModel.leadingEntity.name: 'ZI_Travel'
+define service ZUI_FLIGHT_TRAVEL {
+  expose ZI_Travel as Travel;
+  expose ZI_Booking as Booking;
+  expose ZI_BookingSupplement as BookingSupplement;
+  expose ZI_Flight as Flight;
+  expose ZI_Carrier as Carrier;
+  expose ZI_Connection as Connection;
+  expose ZI_Customer as CustomerMaster;
+  expose ZI_Airport as Airport;
+  expose ZI_Supplement as Supplement;
+  expose ZI_TravelStatusVH as TravelStatus;
+  expose ZI_BookingStatusVH as BookingStatus;
+}
